@@ -2,8 +2,33 @@
 <html>
   <head>
     <title>Spin Wheel!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
   <body>
+    <div class="container-fluid">
+       <div class="span10">
           <h1>Spin Wheel!</h1>
+          <input type="button" value="spin" onclick="spin();" style="float: left;"> </input>
+          <canvas id="wheelcanvas" width="500" height="500"></canvas>
+       </div>   
+       <div class="span2">
+         <div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Action
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+  </ul>
+</div>
+       </div>
+    </div>
   </body>
+  <script type="application/javascript" src="http://code.jquery.com/jquery.js"></script>
+  <script type="application/javascript" src="js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="js/spin-wheel.js"> </script>
 </html>
+
+
