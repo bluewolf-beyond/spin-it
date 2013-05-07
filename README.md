@@ -4,4 +4,4 @@
 ## Prerequisites
 
 1.  [Node.js](http://nodejs.org/ "Title") installed 
-2.  [Redis](http://redis.io/ "Title") installed 
+2.  [NPM](https://npmjs.org/ "Title") installed 
