@@ -10,7 +10,7 @@
     <div class="container-fluid">
        <div class="span10">
           <h1>Spin Wheel!</h1>
-          <input type="button" value="spin" onclick="spin();" style="float: left;"> </input>
+          <input type="button" value="spin" onclick="SpinWheel.spin();" style="float: left;"> </input>
           <canvas id="wheelcanvas" width="500" height="500"></canvas>
        </div>   
        <div class="span2">
@@ -21,6 +21,13 @@
   <script type="application/javascript" src="http://code.jquery.com/jquery.js"></script>
   <script type="application/javascript" src="js/bootstrap.min.js"></script>
   <script type="application/javascript" src="js/spin-wheel.js"> </script>
+  <script type="application/javascript"> 
+	$(document).ready(function (){
+		if ( SpinWheel.checkWebGLSupport() ){
+			SpinWheel.draw();
+		}
+	});
+  </script>
 </html>
 
 
