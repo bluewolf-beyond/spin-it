@@ -21,7 +21,18 @@
   <script type="application/javascript" src="http://code.jquery.com/jquery.js"></script>
   <script type="application/javascript" src="js/bootstrap.min.js"></script>
   <script type="application/javascript" src="js/spin-wheel.js"> </script>
+  <script src="/socket.io/socket.io.js"></script>	
   <script type="application/javascript"> 
+	 var socket = io.connect('http://localhost');
+  	 socket.on('news', function (data) {
+    		console.log(data);
+  	 });
+  	 socket.on('beginrotate', function (data) {
+    		console.log(data);
+		SpinWheel.remoteSpin(data['a'], data['b'] )
+  	 });
+
+
 	$(document).ready(function (){
 		if ( SpinWheel.checkWebGLSupport() ){
 			SpinWheel.draw();

@@ -79,8 +79,25 @@ var SpinWheel = SpinWheel || {
 		spinAngleStart = Math.random() * 10 + 10;
 		spinTime = 0;
 		spinTimeTotal = Math.random() * 3 + 5 * 1000;
+		this.broadcastSpin( spinAngleStart, spinTimeTotal );
     		this.rotateWheel();
 	},
+	broadcastSpin: function ( spinAngleStart, spinTimeTotal  ){
+		if ( typeof socket !== "undefined" ){
+			socket.emit('rotate', { 
+					a : spinAngleStart,
+					b : spinTimeTotal  
+					});
+		}
+	},
+	
+	remoteSpin : function (remoteSpinAngleStart,remoteSpinTimeTotal) {
+		spinAngleStart = remoteSpinAngleStart;
+		spinTime = 0;
+		spinTimeTotal = remoteSpinTimeTotal;
+    		this.rotateWheel();
+	},
+
 	rotateWheel: function () {
 		spinTime += 30;
 		if(spinTime >= spinTimeTotal) {
@@ -117,6 +134,7 @@ var SpinWheel = SpinWheel || {
 		}
 		return true;
 	}
+
 }
 
 
