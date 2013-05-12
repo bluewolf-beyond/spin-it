@@ -15,11 +15,14 @@ app.get('/', function (req, res) {
 app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
+  socket.broadcast.emit('news', { hello: 'hello world' });
+  socket.on('rotate', function (data) {
+    socket.broadcast.emit('beginrotate', data );	
     console.log(data);
-  });
+  });	
+
 });
+
 
 
 console.log("Listening on " + port);
